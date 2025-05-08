@@ -6,6 +6,8 @@ buildscript {
     repositories {
         google()
         jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
     }
 
     dependencies {
@@ -18,7 +20,9 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
         maven { url "https://jitpack.io" }
+        
     }
 }
 
@@ -29,6 +33,10 @@ android {
 
     namespace = 'com.destinyed.flutter_youtube_downloader'
     compileSdkVersion 30
+    
+    kotlinOptions {
+        jvmTarget = '17' // Cambia de '21' a '17' o '11'
+    }
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -44,7 +52,8 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.github.HaarigerHarald:android-youtubeExtractor:v2.1.0'
 
-    implementation 'com.github.HaarigerHarald:android-youtubeExtractor:master-SNAPSHOT'
+
 
 }
