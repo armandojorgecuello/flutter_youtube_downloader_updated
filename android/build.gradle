@@ -26,6 +26,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+
+    namespace = 'com.destinyed.flutter_youtube_downloader'
     compileSdkVersion 30
 
     sourceSets {
